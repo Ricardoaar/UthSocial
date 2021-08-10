@@ -1,6 +1,5 @@
 <?php
 $urlArr = explode('/', $_SERVER['REQUEST_URI']);
-
 $currentPage = $urlArr[count($urlArr) - 1];
 ?>
 
@@ -25,7 +24,7 @@ $currentPage = $urlArr[count($urlArr) - 1];
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-danger w-100">
         <a class="navbar-brand"
-           href="/uth_social/index.php"> UTH SOCIAL</a>
+           href="/index.php"> UTH SOCIAL</a>
         <button class="navbar-toggler"
                 type="button"
                 data-toggle="collapse"
@@ -44,19 +43,18 @@ $currentPage = $urlArr[count($urlArr) - 1];
                     </li>
                     <li class="nav-item active">
                         <a class="nav-link"
-                           href="">Cerrar Sesión <span class="sr-only">(current)</span></a>
+                           href="/bin/closeSession.php">Cerrar Sesión</a>
                     </li>
-                <?php elseif (true): ?>
-
-                    <li class="nav-item active">
-                        <a class="nav-link"
-                           href="/public/login.php">Iniciar Sesión</a>
-                    </li>
-                <?php else: ?>
-                    <?= $currentPage ?>
+                <?php elseif (substr($currentPage, 0, strlen('login.php')) === 'login.php'): ?>
                     <li class="nav-item active">
                         <a class="nav-link"
                            href="/index.php">Volver al home</a>
+                    </li>
+
+                <?php else: ?>
+                    <li class="nav-item active">
+                        <a class="nav-link"
+                           href="/public/login.php">Iniciar Sesión</a>
                     </li>
                 <?php endif; ?>
             </ul>

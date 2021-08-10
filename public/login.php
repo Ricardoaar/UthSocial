@@ -1,5 +1,4 @@
 <?php
-
 require("../partials/header.php");
 ?>
 
@@ -15,7 +14,6 @@ require("../partials/header.php");
                             echo "<p class='text-danger'>Contraseña o usuario incorrectos</p>";
                             break;
                     }
-
                     ?>
                 <?php endif; ?>
 
@@ -58,8 +56,6 @@ require("../partials/header.php");
             </div>
         </form>
     </div>
-
-
 <?php
 
 require('../partials/footer.php');

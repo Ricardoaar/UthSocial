@@ -1,13 +1,6 @@
 <?php
 require_once("partials/header.php");
-////session_start();
-//$userName = "";
-//$crud = new Crud();
-//if (isset($_SESSION['user_id'])) {
-//    $data = $crud->where_and("user_id", "=", $_SESSION['user_id'])
-//        ->get();
-//    $data = ['userId'];
-//}
+
 
 ?>
 
@@ -35,12 +28,6 @@ require_once("partials/header.php");
 
 
                     <?php
-                    require('bin/helpers/HtmlBuilder.php');
-                    require('bin/Crud.php');
-                    $crud = new Crud("user");
-                    $headers = ["#", "Email", "Contraseña", "Nombre", "Apellido", "Alias", "Activo"];
-                    $data = $crud->get();
-                    echo buildTableStdAsString($headers, $data);
 
                     ?>
                 </div>
