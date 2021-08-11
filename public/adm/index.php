@@ -1,23 +1,27 @@
 <?php
-session_start();
-if (!isset($_SESSION['info'])) {
-//    header("Location: /");
-}
-
-
-$userData = $_SESSION['info'];
-
+//session_start();
 
 require('../../partials/header.php');
 require('../../bin/shower.php');
+
+$message = "";
+$err = $_REQUEST['err'];
+if ($err) {
+    switch (intval($err)) {
+        case 1:
+            $message = "No puedes eliminar tu mismo usuario!";
+            break;
+    }
+
+}
 ?>
 
     <main>
         <div class="container my-5">
             <div class="row">
-                <div class="col">
-                    <h2 class="text-center">Administrador</h2>
-
+                <div class="col text-center">
+                    <h2 class="">Administrador</h2>
+                    <small class="text-danger"><?= $message ?></small>
                 </div>
             </div>
         </div>
@@ -29,7 +33,6 @@ require('../../bin/shower.php');
                     ?>
                 </div>
             </div>
-
         </div>
     </main>
 

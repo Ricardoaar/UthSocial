@@ -13,3 +13,4 @@ function displayUsers()
     $config = ["extra_cols" => $extraCols, "tr" => 'xl', "tc" => "thead-dark"];
     echo buildTableStdAsString($headers, $data, $config);
 }
+?>

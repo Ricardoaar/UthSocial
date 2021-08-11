@@ -1,7 +1,13 @@
 <?php
+session_start();
 $urlArr = explode('/', $_SERVER['REQUEST_URI']);
 $currentPage = $urlArr[count($urlArr) - 1];
+if ($_SESSION['info']) {
+    $userType = $_SESSION['info']['id_user_type'];
+    header("Location: /bin/redirect.php?id_user_type=$userType");
+}
 ?>
+
 
 <!doctype html>
 <html lang="en">
@@ -20,7 +26,6 @@ $currentPage = $urlArr[count($urlArr) - 1];
     <title> UTH SOCIAL</title>
 </head>
 <body class="d-flex flex-column min-vh-100">
-
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-danger w-100">
         <a class="navbar-brand"
@@ -39,6 +44,7 @@ $currentPage = $urlArr[count($urlArr) - 1];
              id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 <?php if (isset($_SESSION['info'])) : ?>
+
 
                     <?php $user = $_SESSION['info']['name'] ?>
                     <li><span class="nav-link active">Bienvenido <?= $user ?></span>

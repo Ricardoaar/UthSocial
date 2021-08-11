@@ -63,7 +63,7 @@ class Crud
     }
 
     //DELETE
-    public function delete($obj)
+    public function delete()
     {
         try {
             /** @noinspection SqlWithoutWhere
