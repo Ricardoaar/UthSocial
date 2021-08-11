@@ -1,7 +1,11 @@
 <?php
 require_once("partials/header.php");
+session_start();
 
+if (isset($_SESSION['info'])) {
 
+        header("Location: /bin/");
+};
 ?>
 
     <body>

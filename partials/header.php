@@ -38,7 +38,9 @@ $currentPage = $urlArr[count($urlArr) - 1];
         <div class="collapse navbar-collapse"
              id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
-                <?php if (isset($user)) : ?>
+                <?php if (isset($_SESSION['info'])) : ?>
+
+                    <?php $user = $_SESSION['info']['name'] ?>
                     <li><span class="nav-link active">Bienvenido <?= $user ?></span>
                     </li>
                     <li class="nav-item active">

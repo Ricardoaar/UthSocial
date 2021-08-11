@@ -25,7 +25,7 @@ require("../partials/header.php");
 
 
         <form action="../bin/login.php"
-              method="get">
+              method="POST">
 
             <div class="form-group">
                 <label for="email">Email</label>
