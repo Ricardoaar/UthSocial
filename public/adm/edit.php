@@ -1,7 +1,7 @@
 <?php
 
 if (!$_REQUEST['id']) header("Location: /");
-require("../partials/header.php");
+require("../../partials/header.php");
 $id = $_REQUEST['id'];
 
 
@@ -9,8 +9,8 @@ $id = $_REQUEST['id'];
     <main>
 
         <?php
-        require_once('Crud.php');
-        require_once('helpers/prototypes.php');
+        require_once('../../bin/Crud.php');
+        require_once('../../bin/helpers/prototypes.php');
         $crud = new Crud("user");
         $data = $crud->where_and("id", "=", $id)->get();
         $userInfo = convertProtoToArray($data, getUserKeys());
@@ -25,7 +25,7 @@ $id = $_REQUEST['id'];
             </div>
             <div class="row">
                 <div class="col-8 offset-2">
-                    <form method="POST" action="admin_methods.php?option=1&id=<?= $id ?>">
+                    <form method="POST" action="/bin/admin/admin_methods.php?option=1&id=<?= $id ?>">
                         <div class="mb-3">
                             <label for="email" class="form-label">Email</label>
                             <input type="email" class="form-control" id="email" name="email"
@@ -72,4 +72,4 @@ $id = $_REQUEST['id'];
 
     </main>
 <?php
-require("../partials/footer.php");
+require("../../partials/footer.php");

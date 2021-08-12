@@ -31,10 +31,10 @@ if ($err) {
 
                 <div class="offset-0 col-6 col-md-4 offset-md-2">
 
-                    <button class="w-100 btn btn-danger">Agregar Usuario</button>
+                    <a class="w-100 btn btn-danger" href="createUser.php">Agregar Usuario</a>
                 </div>
                 <div class="col-6 col-md-4">
-                    <button class="w-100 btn btn-danger">Agregar Encuesta</button>
+                    <a class="w-100 btn btn-danger">Agregar Encuesta</a>
                 </div>
             </div>
 

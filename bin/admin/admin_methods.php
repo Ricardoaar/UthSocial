@@ -1,7 +1,7 @@
 <?php
 
 
-require('Crud.php');
+require('../Crud.php');
 if (!isset($_REQUEST['option'])) header('Location: /');
 
 $option = $_REQUEST['option'];

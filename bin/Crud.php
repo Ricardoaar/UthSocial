@@ -20,7 +20,7 @@ class Crud
     public function get()
     {
         try {
-            $this->sql = "SELECT * FROM $this->table $this->wheres";
+            $this->sql = "SELECT * FROM $this->table $this->wheres order by `id`";
             $sth = $this->connection->prepare($this->sql);
             $sth->execute();
             return $sth->fetchAll(PDO::FETCH_OBJ);
