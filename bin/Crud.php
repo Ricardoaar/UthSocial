@@ -121,10 +121,8 @@ class Crud
                 $query->bindValue(":$key", $value);
             }
         }
-        var_dump($query);
         $query->execute();
         $this->restartValues();
-
         return $query->rowCount();
     }
 
