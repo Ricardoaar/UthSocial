@@ -11,13 +11,12 @@ if (isset($_POST['password']) && isset($_POST['email'])) {
     $data = $userCrud->where_and('email', 'like', '%' . $email)
         ->where_and('password', '=', $password)->get();
     $finalData = convertProtoToArray($data, getUserKeys());
-
     if (count($finalData) > 0) {
+        require('../bin/redirect.php');
         session_start();
         $_SESSION['info'] = $finalData;
         $idUT = intval($finalData['id_user_type']);
-        header("Location: /bin/redirect.php?id_user_type=$idUT");
-
+        redirectUser($idUT);
     } else {
         header($destiny . "2");
     }

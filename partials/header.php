@@ -2,10 +2,7 @@
 session_start();
 $urlArr = explode('/', $_SERVER['REQUEST_URI']);
 $currentPage = $urlArr[count($urlArr) - 1];
-if ($_SESSION['info']) {
-    $userType = $_SESSION['info']['id_user_type'];
-    header("Location: /bin/redirect.php?id_user_type=$userType");
-}
+
 ?>
 
 

@@ -1,8 +1,11 @@
 <?php
 require_once("partials/header.php");
-
+if ($_SESSION['info']) {
+    require('bin/redirect.php');
+    $userType = $_SESSION['info']['id_user_type'];
+    redirectUser($userType);
+}
 ?>
-
     <body>
     <main>
         <div class="container my-5">

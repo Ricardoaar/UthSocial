@@ -1,6 +1,7 @@
 <?php
 //session_start();
 
+
 require('../../partials/header.php');
 require('../../bin/shower.php');
 
@@ -25,6 +26,20 @@ if ($err) {
                 </div>
             </div>
         </div>
+        <div class="container">
+            <div class="row">
+
+                <div class="offset-0 col-6 col-md-4 offset-md-2">
+
+                    <button class="w-100 btn btn-danger">Agregar Usuario</button>
+                </div>
+                <div class="col-6 col-md-4">
+                    <button class="w-100 btn btn-danger">Agregar Encuesta</button>
+                </div>
+            </div>
+
+        </div>
+
         <div class="container my-5">
             <div class="row">
                 <div class="col-12  w-100 text-center">
