@@ -12,7 +12,7 @@ if ($_SESSION['info']) {
             <div class="row pt-5">
                 <div class="col text-center ">
                     <h3>
-                        Bienvenido a UTH Social
+                        Bienvenido a UTH Social estamos presentando la integradora
                     </h3>
                     <small class="small">El lugar donde todos decimos lo que pensamos</small>
                 </div>
