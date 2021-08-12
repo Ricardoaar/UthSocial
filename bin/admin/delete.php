@@ -11,7 +11,7 @@ if (isset($_REQUEST['del'])) {
     require('../Crud.php');
     $crud = new Crud('user');
     $crud->where_and("id", "=", $id)->delete();
-    header('Location: /public/adm/');
+    header('Location: ../../public/adm/');
 }
 
 require('../../partials/header.php');

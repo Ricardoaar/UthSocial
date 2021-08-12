@@ -14,12 +14,12 @@ switch ($option) {
                 $crud->where_and("id", "=", "$id")->update([$key => $value]);
             }
         }
-        header("Location: /public/adm/");
+        header("Location: ../../public/adm/ ");
         break;
     case 2:
         $id = $_REQUEST['id'];
         $crud = new Crud('user');
         $crud->insert($_POST);
-        header("Location: /public/adm/");
+        header("Location: ../../public/adm/");
         break;
 }
