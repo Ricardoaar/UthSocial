@@ -35,7 +35,6 @@ class Crud
         try {
             //take keys and convert into a string => `name`, `lastName`,etc
             $fields = implode("`, `", array_keys($obj));
-            echo "<pre>";
             //take values and convert into bindable string => :name, :lastName
             $values = ":" . implode(", :", array_keys($obj));
             $this->sql = "INSERT INTO $this->table(`$fields`) VALUES($values)";
