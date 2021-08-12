@@ -16,4 +16,10 @@ switch ($option) {
         }
         header("Location: /public/adm/");
         break;
+    case 2:
+        $id = $_REQUEST['id'];
+        $crud = new Crud('user');
+        $crud->insert($_POST);
+        header("Location: /public/adm/");
+        break;
 }

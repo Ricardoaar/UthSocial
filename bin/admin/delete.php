@@ -17,7 +17,6 @@ if (isset($_REQUEST['del'])) {
 require('../../partials/header.php');
 require('../../partials/footer.php');
 
-
 echo "
 <script>
 $(document).ready( function () {
@@ -32,12 +31,12 @@ $(document).ready( function () {
         </button>
       </div>
       <div class='modal-body'>
-        <img src='../assets/eliminar.png' alt='status' width='20%'>
+        <img src='/assets/eliminar.png' alt='status' width='20%'>
         <b class='ml-5 text-justify'>¿Estas seguro?</b>
       </div> 
       <div class='modal-footer'>
         <button type='button' class='btn btn-primary'  onclick='redirect (\"../public/adm/\")' data-dismiss='modal'>Cancelar</button>
-        <a type='button' class='btn btn-danger'  onclick='redirect(\"/bin/delete.php?id=$id&del=1\")'  data-dismiss='modal'>Eliminar</a>
+        <a type='button' class='btn btn-danger'  onclick='redirect(\"/bin/admin/delete.php?id=$id&del=1\")'  data-dismiss='modal'>Eliminar</a>
       </div>
     </div>
   </div>

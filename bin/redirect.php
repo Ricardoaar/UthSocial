@@ -13,6 +13,9 @@ function redirectUser($userType)
         case 3:
             $destiny = "a";
             break;
+        default:
+            $destiny = "/";
+
     }
     header("Location: " . $destiny);
 }

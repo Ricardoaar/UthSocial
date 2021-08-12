@@ -4,7 +4,10 @@
 
 require('../../partials/header.php');
 require('../../bin/shower.php');
-
+if ($_SESSION['info']['id_user_type'] != 1) {
+    require('../../bin/redirect.php');
+    redirectUser(0);
+}
 $message = "";
 $err = $_REQUEST['err'];
 if ($err) {
@@ -13,7 +16,6 @@ if ($err) {
             $message = "No puedes eliminar tu mismo usuario!";
             break;
     }
-
 }
 ?>
 

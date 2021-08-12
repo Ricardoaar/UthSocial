@@ -45,12 +45,10 @@ function buildTableStdAsString($headers, $data, $config = []): string
             }
             $table .= "  <th scope='col'>$value</th>";
         }
-
         if (!isset($extraCols)) {
             $table .= "</tr>";
             continue;
         }
-
         $table .= buildExtraCols($extraCols, $id);
         $table .= "</tr>";
     }

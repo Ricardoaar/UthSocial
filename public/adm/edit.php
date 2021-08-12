@@ -3,7 +3,10 @@
 if (!$_REQUEST['id']) header("Location: /");
 require("../../partials/header.php");
 $id = $_REQUEST['id'];
-
+if ($_SESSION['info']['id_user_type'] != 1) {
+    require('../../bin/redirect.php');
+    redirectUser(0);
+}
 
 ?>
     <main>
