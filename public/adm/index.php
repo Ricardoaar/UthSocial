@@ -36,7 +36,7 @@ if ($err) {
                     <a class="w-100 btn btn-danger" href="createUser.php">Agregar Usuario</a>
                 </div>
                 <div class="col-6 col-md-4">
-                    <a class="w-100 btn btn-danger">Agregar Encuesta</a>
+                    <a href="CreateForm.php" class="w-100 btn btn-danger">Agregar Encuesta</a>
                 </div>
             </div>
 

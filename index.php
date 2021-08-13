@@ -3,6 +3,17 @@ require_once("partials/header.php");
 if ($_SESSION['info']) {
     require('bin/redirect.php');
     $userType = $_SESSION['info']['id_user_type'];
+    switch ($userType) {
+        case "Administrador":
+            $userType = 1;
+            break;
+        case "Analista":
+            $userType = 2;
+            break;
+        case "Usuario":
+            $userType = 3;
+            break;
+    }
     redirectUser($userType);
 }
 ?>
@@ -30,4 +41,6 @@ if ($_SESSION['info']) {
     </body>
 
 <?php
+
+
 require_once("partials/footer.php");
