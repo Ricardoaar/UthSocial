@@ -1,5 +1,6 @@
 <?php
 require_once("partials/header.php");
+require('IP.txt');
 if ($_SESSION['info']) {
     require('bin/redirect.php');
     $userType = $_SESSION['info']['id_user_type'];
