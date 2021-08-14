@@ -1,11 +1,11 @@
 class Generator {
     constructor(name) {
         this.name = name;
-        this.current = 0;
+        this.current = 1;
     }
 
     getNext() {
-        return `${this.name}${++this.current}`
+        return `${this.name}${this.current++}`
     }
 
     returnPos() {
