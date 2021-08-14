@@ -26,11 +26,9 @@ if (count($_POST) > 0) {
                     <form action="">
                         <label class="w-100">
                             <select id="type" class="form-control w-100">
-                                <option value="text">Multiple Texto</option>
+                                <option value="multiple">Multiple</option>
                                 <option value="open">Abierta</option>
-                                <option value="range">Rango</option>
-                                <option value="number">Multiple Numeros</option>
-                                <option value="date">Fecha</option>
+                                <option value="number">Numero</option>
                             </select>
                         </label>
                     </form>
@@ -42,7 +40,7 @@ if (count($_POST) > 0) {
                 <div id="forms">
 
                 </div>
-                <button class="btn btn-success ml-auto w-50 mt-5" disabled type="submit">Agregar Cuestionario</button>
+                <button class="btn btn-success ml-auto w-50 mt-5" type="submit">Agregar Cuestionario</button>
             </form>
         </div>
     </main>

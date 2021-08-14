@@ -1,6 +1,6 @@
 <?php
 require_once("partials/header.php");
-if ($_SESSION['info']) {
+gif ($_SESSION['info']) {
     require('bin/redirect.php');
     $userType = $_SESSION['info']['id_user_type'];
     switch ($userType) {
@@ -23,7 +23,7 @@ if ($_SESSION['info']) {
             <div class="row pt-5">
                 <div class="col text-center ">
                     <h3>
-                        Bienvenido a UTH Social estamos presentando la integradora
+                        Bienvenido a UTH Social
                     </h3>
                     <small class="small">El lugar donde todos decimos lo que pensamos</small>
                 </div>

@@ -12,6 +12,22 @@ function AddQuestion() {
     let type = document.getElementById('type')
     let block = document.createElement('div');
     block.id = `c${currentId}`;
+
+    let addButton = `<div class="container">
+            <div class="row"><div class="offset-4 col-4">
+                <button TYPE="button" id="add${currentId}"  class="btn btn-success w-100">+</button>
+            </div>
+            </div>`;
+
+    switch (type.value) {
+        case 'multiple':
+            break;
+        case 'open':
+            break;
+        case 'number':
+            break;
+    }
+
     block.innerHTML = `
             <div class="row">
                 <div class="col">
@@ -33,6 +49,7 @@ function AddQuestion() {
                     </div>
                 </div>
             </div>
+            
             <div class="container">
             <div class="row"><div class="offset-4 col-4">
                 <button TYPE="button" id="add${currentId}"  class="btn btn-success w-100">+</button>
@@ -74,4 +91,14 @@ function addResponse(id) {
     document.getElementById(`delAns${currentId}`)
         .addEventListener("click",
             () => ansContainer.removeChild(block), false);
+}
+
+function addMultiple(type) {
+
+
+}
+
+function addOpen(type) {
+
+
 }
