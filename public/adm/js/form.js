@@ -10,7 +10,7 @@ const container = document.getElementById('forms');
 function AddQuestion() {
 
     let currentId = questionGenerator.getNext();
-    let type = document.getElementById('type')
+    // let type = document.getElementById('type')
     let block = document.createElement('div');
     block.id = `c${currentId}`;
     const suffix = type.value === 'number' ? 'num' : type.value === 'open' ? 'text' : '';
@@ -61,12 +61,12 @@ function addResponse(id) {
               <div class="offset-1 col-2 w-100 mt-2">
                      <button TYPE="button" id="delAns${currentId}"  class="btn btn-danger w-100">-</button>
                 </div>
-             </div>
-              `;
-    ansContainer.appendChild(block)
+             </div>`;
+    ansContainer.appendChild(block);
     document.getElementById(`delAns${currentId}`)
         .addEventListener("click",
             () => ansContainer.removeChild(block), false);
+<<<<<<< HEAD
 }
 
 function addMultiple(id) {
@@ -92,3 +92,6 @@ function addMultiple(id) {
     addResponse(`${id}`);
 }
 
+=======
+}
+>>>>>>> 76798c0853d92e72713ee3b7b313e24edde30399
