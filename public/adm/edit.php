@@ -10,7 +10,6 @@ if ($_SESSION['info']['id_user_type'] != 1) {
 
 ?>
     <main>
-
         <?php
         require_once('../../bin/Crud.php');
         require_once('../../bin/helpers/prototypes.php');
@@ -52,9 +51,7 @@ if ($_SESSION['info']['id_user_type'] != 1) {
                         <div class="mb-3">
                             <label for="alias" class="form-label">Alias</label>
                             <input type="text" class="form-control" id="alias" name="alias"
-                                   value="<?= $userInfo['alias'] ?>"
-
-                            >
+                                   value="<?= $userInfo['alias'] ?>">
                         </div>
                         <div class=" mb-3">
                             <label>

@@ -1,6 +1,6 @@
 <?php
 require_once("partials/header.php");
-gif ($_SESSION['info']) {
+if ($_SESSION['info']) {
     require('bin/redirect.php');
     $userType = $_SESSION['info']['id_user_type'];
     switch ($userType) {

@@ -45,6 +45,14 @@ class Crud
         }
     }
 
+    function getMaxId()
+    {
+        $sth = $this->connection->prepare("select MAX(id) as 'max_id' from $this->table");
+        $sth->execute();
+        $id = $sth->fetch(PDO::FETCH_ASSOC);
+        return $id['max_id'];
+    }
+
 
     //UPDATE
     public function update($obj)
@@ -112,7 +120,9 @@ class Crud
 
     private function execute($obj = null): int
     {
+
         $query = $this->connection->prepare($this->sql);
+
         if ($obj !== null) {
             foreach ($obj as $key => $value) {
                 if (empty($value)) {

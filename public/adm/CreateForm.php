@@ -24,6 +24,7 @@ if (count($_POST) > 0) {
                 </div>
                 <div class="col-6">
                     <form action="">
+
                         <label class="w-100">
                             <select id="type" class="form-control w-100">
                                 <option value="multiple">Multiple</option>
@@ -36,9 +37,14 @@ if (count($_POST) > 0) {
             </div>
         </div>
         <div class="container mt-5">
-            <form action="CreateForm.php" method="post">
+            <form action="/bin/formCreator.php" method="post">
+                <div class="row">
+                    <div class="col">
+                        <label for="title">Nombre del cuestionario</label>
+                        <input name="title" class="form-group" id="title" type="text">
+                    </div>
+                </div>
                 <div id="forms">
-
                 </div>
                 <button class="btn btn-success ml-auto w-50 mt-5" type="submit">Agregar Cuestionario</button>
             </form>
