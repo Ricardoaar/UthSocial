@@ -8,7 +8,6 @@ $data = $_POST;
 $title = $data['title'];
 $questions = [];
 $answers = [];
-
 $formId = $formCrud->insert(['name' => $title, 'id_category' => 1]);
 $open = [];
 function endsWith($haystack, $needle): bool
@@ -23,17 +22,14 @@ function endsWith($haystack, $needle): bool
 foreach ($data as $key => $item) {
     if (startsWith($key, 'question')) {
         $questions[$key] = $item;
-
     } else if (startsWith($key, "answer")) {
         $answers[$key] = $item;
     }
 }
 
-
 $ids = [];
 
 foreach ($questions as $question => $value) {
-    $type = substr($question, strlen('question1'));
     $type = "";
     if (endsWith($question, 'num')) {
         $type = 'num';
@@ -45,22 +41,33 @@ foreach ($questions as $question => $value) {
     $object = ['question' => $value, 'id_form' => $formId, 'type' => $type];
     $id = $questionCrud->get();
     $questionCrud->insert($object);
-    $ids[$question[strlen('question')]] = $questionCrud->getMaxId();
+    if ($type == 'mult') {
+        array_push($ids, $questionCrud->getMaxId());
+    }
 }
-
+$current = 0;
+$currentFlag = "";
 foreach ($answers as $answer => $value) {
-
     $position = strpos($answer, 'on');
-    $questID = $ids[substr(substr($answer, $position), 2)];
+    $thisFLag = $ids[substr(substr($answer, $position), 2)];
+    if ($currentFlag == "") {
+        $currentFlag = $thisFLag;
+    } else if ($currentFlag != $thisFLag) {
+        $currentFlag = $thisFLag;
+        $current++;
+    }
+    $questID = $ids[$current];
     $obj = ['answer' => $value, 'id_question' => $questID];
     $answersCrud->insert($obj);
 }
+echo "<pre>";
+var_dump($ids);
+
 
 function startsWith($text, $needle): bool
 {
     return (substr($text, 0, strlen($needle)) === $needle);
 }
 
-header("Location: /public/adm/");
+//header("Location: /public/adm/");
 ?>
-
