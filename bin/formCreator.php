@@ -60,8 +60,6 @@ foreach ($answers as $answer => $value) {
     $obj = ['answer' => $value, 'id_question' => $questID];
     $answersCrud->insert($obj);
 }
-echo "<pre>";
-var_dump($ids);
 
 
 function startsWith($text, $needle): bool
@@ -69,5 +67,5 @@ function startsWith($text, $needle): bool
     return (substr($text, 0, strlen($needle)) === $needle);
 }
 
-//header("Location: /public/adm/");
+header("Location: /public/adm/");
 ?>
