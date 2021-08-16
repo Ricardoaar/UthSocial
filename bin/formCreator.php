@@ -49,8 +49,10 @@ $current = 0;
 $currentFlag = "";
 foreach ($answers as $answer => $value) {
     $position = strpos($answer, 'on');
-    $thisFLag = $ids[substr(substr($answer, $position), 2)];
+    $thisFLag = substr(substr($answer, $position), 2);
+//    echo $currentFlag . " : " . $thisFLag . "<br>";
     if ($currentFlag == "") {
+
         $currentFlag = $thisFLag;
     } else if ($currentFlag != $thisFLag) {
         $currentFlag = $thisFLag;
