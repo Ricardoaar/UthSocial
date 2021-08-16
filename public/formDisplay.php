@@ -25,33 +25,33 @@ foreach ($formData as $field) {
 }
 
 
-function displayText($question)
+function displayText($question, $id)
 {
     echo "
-<div class='my-5 col-12 text-center'>
+<div class='my-3 col-12 text-center'>
 <label >$question
-        <input  type='text' class='form-group w-75' name='$question'>
+        <input  type='text' class='form-control w-100' name='$question/$id'>
     </label>
     </div>";
 }
 
-function displayNum($question)
+function displayNum($question, $id)
 {
     echo "
 
-            <div class='my-5 col text-center'>
+            <div class='my-3 col text-center'>
             <label>$question
-        <input type='number' class='form-group' name='$question'>
+        <input type='number' class='form-control w-100' name='$question/$id'>
             </label></div>";
 }
 
-function displayMulti($question, $answers)
+function displayMulti($question, $answers, $id)
 {
     echo "
-<div class='my-5 col-12 text-center'>
+<div class='my-5 col-8 offset-2 text-center'>
 
 <label for='$question'>$question</label>
-<select class='form-control' name='$question' id='$question'> ";
+<select class='form-control' name='$question/$id' id='$question'> ";
     foreach ($answers as $ans) {
         echo "
                 <option value='$ans'>$ans</option>";
@@ -73,15 +73,12 @@ function displayMulti($question, $answers)
         </div>
 
         <div class="container my-5">
-            <form action="" method="post">
+            <form action="/bin/ansForm.php?id=<?= $id ?>" method="post">
                 <div class="row text-center">
-
                     <?php
-
                     $answersIds = [];
                     $questions = [];
                     $answers = [];
-
                     foreach ($questionData as $data) {
                         foreach ($data as $value) {
                             array_push($value);
@@ -94,8 +91,6 @@ function displayMulti($question, $answers)
                         }
                         array_push($answers, $current);
                     }
-
-
                     foreach ($questionData as $questDatum) {
                         $current = [];
                         foreach ($questDatum as $question) {
@@ -103,9 +98,9 @@ function displayMulti($question, $answers)
                         }
                         $type = $current[3];
                         if ($type == 'num') {
-                            displayNum($current[1]);
+                            displayNum($current[1], $current[0]);
                         } else if ($type == 'text') {
-                            displayText($current[1]);
+                            displayText($current[1], $current[0]);
                         } else {
                             $availableAns = [];
                             foreach ($answers as $answer) {
@@ -113,19 +108,16 @@ function displayMulti($question, $answers)
                                     array_push($availableAns, $answer[1]);
                                 }
                             }
-                            displayMulti($current[1], $availableAns);
+                            displayMulti($current[1], $availableAns, $current[0]);
                         }
                     }
                     ?>
-
-
-                    <button class="btn btn-success"></button>
+                    <div class="col-12">
+                        <button class="btn btn-success">Enviar</button>
+                    </div>
                 </div>
-
             </form>
         </div>
-
-
     </main>
 <?php
 require('../partials/footer.php');

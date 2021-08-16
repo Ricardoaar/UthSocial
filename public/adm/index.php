@@ -39,9 +39,7 @@ if ($err) {
                     <a href="CreateForm.php" class="w-100 btn btn-danger">Agregar Encuesta</a>
                 </div>
             </div>
-
         </div>
-
         <div class="container my-5">
             <div class="row">
                 <div class="col-12  w-100 text-center">

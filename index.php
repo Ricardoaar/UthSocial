@@ -1,21 +1,7 @@
 <?php
 require_once("partials/header.php");
-if ($_SESSION['info']) {
-    require('bin/redirect.php');
-    $userType = $_SESSION['info']['id_user_type'];
-    switch ($userType) {
-        case "Administrador":
-            $userType = 1;
-            break;
-        case "Analista":
-            $userType = 2;
-            break;
-        case "Usuario":
-            $userType = 3;
-            break;
-    }
-    redirectUser($userType);
-}
+$msg = $_REQUEST['msg'];
+
 ?>
     <body>
     <main>
@@ -29,6 +15,10 @@ if ($_SESSION['info']) {
                 </div>
             </div>
             <div class="row text-center my-5">
+                <div class="col">
+
+                    <p class="text-center"><?= $msg ?></p>
+                </div>
             </div>
         </div>
         <div class="container my-5">
@@ -46,3 +36,19 @@ if ($_SESSION['info']) {
 
 
 require_once("partials/footer.php");
+if ($_SESSION['info']) {
+    require('bin/redirect.php');
+    $userType = $_SESSION['info']['id_user_type'];
+    switch ($userType) {
+        case "Administrador":
+            $userType = 1;
+            break;
+        case "Analista":
+            $userType = 2;
+            break;
+        case "Usuario":
+            $userType = 3;
+            break;
+    }
+    redirectUser($userType);
+}

@@ -5,11 +5,6 @@ require('../../partials/header.php');
 //    redirectUser(0);
 //}
 
-if (count($_POST) > 0) {
-    foreach ($_POST as $item) {
-        echo $item;
-    }
-}
 
 ?>
 

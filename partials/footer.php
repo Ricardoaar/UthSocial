@@ -1,7 +1,7 @@
 <footer>
     <div class="container-fluid bg-danger" style="bottom: 0">
         <div class="row">
-            <div class="col mt-md-0 bg-danger pt-2 clear-top">
+            <div class="col mt-md-0 bg-danger text-center pt-2 clear-top">
                 <strong>Uth Social</strong>
             </div>
         </div>

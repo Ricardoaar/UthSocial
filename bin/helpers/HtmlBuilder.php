@@ -35,7 +35,6 @@ function buildTableStdAsString($headers, $data, $config = []): string
 
     $table .= "</tr></thead><tbody>";
 
-    echo "here";
     foreach ($data as $arr) {
         $isId = true;
         $id = null;
