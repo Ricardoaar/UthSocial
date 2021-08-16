@@ -21,6 +21,7 @@ function buildTableDicAsString($headers, $data): string
 
 function buildTableStdAsString($headers, $data, $config = []): string
 {
+
     if (count($config) > 0) {
         $tr = $config['tr'];
         $tableColor = $config['tc'];
@@ -29,7 +30,6 @@ function buildTableStdAsString($headers, $data, $config = []): string
 
     $table = "<table class=\"table table-responsive-$tr\"><thead class=\"$tableColor\"><tr>";
     foreach ($headers as $head) {
-
         $table .= "<th scope='col'>$head</th>";
     }
 
@@ -46,6 +46,7 @@ function buildTableStdAsString($headers, $data, $config = []): string
             }
             $table .= "  <th scope='col'>$value</th>";
         }
+
         if (!isset($extraCols)) {
             $table .= "</tr>";
             continue;
