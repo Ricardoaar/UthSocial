@@ -39,17 +39,14 @@ foreach ($questions as $question => $value) {
 foreach ($answers as $answer => $value) {
  
    $ansId = $ids[substr($answer, strlen('answer1question'))];
-	var_dump($ids);    
 $obj = ['answer' => $value, 'id_question' => $ansId];
 	echo $ansId;
 $answersCrud->insert($obj);
 }
-
 function startsWith($text, $needle): bool
 {
     return (substr($text, 0, strlen($needle)) === $needle);
 }
-
 header("Location: /public/adm/");
 ?>
 
