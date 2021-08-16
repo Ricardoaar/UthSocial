@@ -1,5 +1,4 @@
 <?php
-echo "<pre>";
 require('Crud.php');
 $form_id = $_REQUEST['id'];
 $pollForm = new Crud('poll');
@@ -19,3 +18,4 @@ foreach ($_POST as $key => $value) {
 }
 $msg = "Gracias por contestar la encuesta $form_id";
 header("Location: /index.php?msg=$msg");
+?>

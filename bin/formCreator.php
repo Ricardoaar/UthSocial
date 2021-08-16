@@ -8,7 +8,6 @@ $data = $_POST;
 $title = $data['title'];
 $questions = [];
 $answers = [];
-var_dump($data);
 
 $formId = $formCrud->insert(['name' => $title, 'id_category' => 1]);
 $open = [];
@@ -25,7 +24,6 @@ $ids = [];
 
 foreach ($questions as $question => $value) {
     $type = substr($question, strlen('question1'));
-    echo "$type";
     if ($type === "") {
         $type = 'mult';
     }
@@ -39,9 +37,12 @@ foreach ($questions as $question => $value) {
 
 
 foreach ($answers as $answer => $value) {
-    $ansId = $ids[substr($answer, strlen('answer1question'))];
-    $obj = ['answer' => $value, 'id_question' => $ansId];
-    $answersCrud->insert($obj);
+ 
+   $ansId = $ids[substr($answer, strlen('answer1question'))];
+	var_dump($ids);    
+$obj = ['answer' => $value, 'id_question' => $ansId];
+	echo $ansId;
+$answersCrud->insert($obj);
 }
 
 function startsWith($text, $needle): bool
@@ -49,7 +50,6 @@ function startsWith($text, $needle): bool
     return (substr($text, 0, strlen($needle)) === $needle);
 }
 
-
 header("Location: /public/adm/");
-
+?>
 
