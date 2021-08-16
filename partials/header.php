@@ -3,8 +3,6 @@ session_start();
 $urlArr = explode('/', $_SERVER['REQUEST_URI']);
 $currentPage = $urlArr[count($urlArr) - 1];
 ?>
-
-
 <!doctype html>
 <html lang="en">
 <head>

@@ -13,7 +13,7 @@ require('../partials/header.php');
 
                 $questCrud = new Crud('form_display');
                 $questCrud->where_and("id", "=", intval($id));
-                
+
                 $data = $questCrud->get();
                 $headers = ['Form Id', 'Pregunta', 'Respuesta'];
                 $config = ["tr" => 'xl', "tc" => "thead-dark"];
