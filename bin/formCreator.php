@@ -20,6 +20,9 @@ foreach ($data as $key => $item) {
         $answers[$key] = $item;
     }
 }
+
+var_dump($answers);
+
 $ids = [];
 
 foreach ($questions as $question => $value) {
