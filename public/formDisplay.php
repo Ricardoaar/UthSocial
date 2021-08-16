@@ -30,7 +30,7 @@ function displayText($question, $id)
     echo "
 <div class='col-12 text-center my-3'>
 <label >$question
-        <input  type='text' class='form-control w-100' name='$question/$id'>
+        <input  type='text' class='form-control w-100' required name='$question/$id'>
     </label>
     </div>";
 }
@@ -41,14 +41,14 @@ function displayNum($question, $id)
 
             <div class='my-3 col-12 text-center'>
             <label>$question
-        <input type='number' class='form-control w-100' name='$question/$id'>
+        <input type='number' class='form-control w-100' required name='$question/$id'>
             </label></div>";
 }
 
 function displayMulti($question, $answers, $id)
 {
     echo "
-<div class='my-5 col-12 offset-md-2 col-md-8 text-center'>
+<div class='my-5 col-12 offset-md-2 col-md-8 required text-center'>
 
 <label for='$question'>$question</label>
 <select class='form-control' name='$question/$id' id='$question'> ";
@@ -79,11 +79,7 @@ function displayMulti($question, $answers, $id)
                     $answersIds = [];
                     $questions = [];
                     $answers = [];
-                    foreach ($questionData as $data) {
-                        foreach ($data as $value) {
-                            array_push($value);
-                        }
-                    }
+
                     foreach ($answersData as $item) {
                         $current = [];
                         foreach ($item as $ans) {

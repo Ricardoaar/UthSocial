@@ -34,19 +34,16 @@ foreach ($questions as $question => $value) {
     $questionCrud->insert($object);
     $ids[$question[strlen('question')]] = $questionCrud->getMaxId();
 }
-
-
 foreach ($answers as $answer => $value) {
- 
-   $ansId = $ids[substr($answer, strlen('answer1question'))];
-$obj = ['answer' => $value, 'id_question' => $ansId];
-	echo $ansId;
-$answersCrud->insert($obj);
+    $ansId = $ids[substr($answer, strlen('answer1question'))];
+    $obj = ['answer' => $value, 'id_question' => $ansId];
+    $answersCrud->insert($obj);
 }
 function startsWith($text, $needle): bool
 {
     return (substr($text, 0, strlen($needle)) === $needle);
 }
+
 header("Location: /public/adm/");
 ?>
 
