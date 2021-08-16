@@ -8,7 +8,7 @@ function redirectUser($userType)
             $destiny = "/public/adm/index.php";
             break;
         case 2:
-            $destiny = "b";
+            $destiny = "/public/analyst.php";
             break;
         case 3:
             $destiny = "a";
