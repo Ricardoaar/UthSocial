@@ -27,7 +27,32 @@ $msg = $_REQUEST['msg'];
                 </div>
             </div>
         </div>
-
+        <div class="container">
+            <div class="row">
+                <div class="offset-2 col-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="/assets/COVI.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">El covid 19</h5>
+                            <p class="card-text">Los coronavirus son una gran familia de virus que causan
+                                enfermedades que van desde el resfriado común hasta enfermedades más graves. La epidemia
+                                de COVID-19 fue declarada por la OMS una emergencia de salud pública de preocupación
+                                internacional el 30 de enero de 2020.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="/assets/RedesSociales-retail-1024x898-2.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Redes sociales</h5>
+                            <p class="card-text">Las redes sociales son estructuras formadas en Internet por personas u
+                                organizaciones que se conectan a partir de intereses o valores comunes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
     </body>
 
@@ -51,3 +76,4 @@ if ($_SESSION['info']) {
     }
     redirectUser($userType);
 }
+?>
