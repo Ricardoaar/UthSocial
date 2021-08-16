@@ -25,7 +25,7 @@ $ids = [];
 
 foreach ($questions as $question => $value) {
     $type = substr($question, strlen('question1'));
-
+    echo "$type";
     if ($type === "") {
         $type = 'mult';
     }

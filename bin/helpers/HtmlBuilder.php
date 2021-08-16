@@ -29,11 +29,13 @@ function buildTableStdAsString($headers, $data, $config = []): string
 
     $table = "<table class=\"table table-responsive-$tr\"><thead class=\"$tableColor\"><tr>";
     foreach ($headers as $head) {
+
         $table .= "<th scope='col'>$head</th>";
     }
+
     $table .= "</tr></thead><tbody>";
 
-
+    echo "here";
     foreach ($data as $arr) {
         $isId = true;
         $id = null;

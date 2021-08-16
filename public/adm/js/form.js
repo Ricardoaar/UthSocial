@@ -66,7 +66,6 @@ function addResponse(id) {
     document.getElementById(`delAns${currentId}`)
         .addEventListener("click",
             () => ansContainer.removeChild(block), false);
-<<<<<<< HEAD
 }
 
 function addMultiple(id) {
@@ -91,7 +90,3 @@ function addMultiple(id) {
             () => addResponse(id), false);
     addResponse(`${id}`);
 }
-
-=======
-}
->>>>>>> 76798c0853d92e72713ee3b7b313e24edde30399

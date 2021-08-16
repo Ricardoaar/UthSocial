@@ -34,9 +34,11 @@ if ($_SESSION['info']) {
         <div class="container my-5">
             <div class="row">
                 <div class="col-12  col-xl-8 offset-md-0 offset-xl-2 w-100 text-center">
+                    <a href="public/formPage.php"><H2>Ver cuestionarios</H2></a>
                 </div>
             </div>
         </div>
+
     </main>
     </body>
 
