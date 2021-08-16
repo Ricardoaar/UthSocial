@@ -16,7 +16,6 @@ $msg = $_REQUEST['msg'];
             </div>
             <div class="row text-center my-5">
                 <div class="col">
-
                     <p class="text-center"><?= $msg ?></p>
                 </div>
             </div>

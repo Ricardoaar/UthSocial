@@ -28,7 +28,7 @@ foreach ($formData as $field) {
 function displayText($question, $id)
 {
     echo "
-<div class='my-3 col-12 text-center'>
+<div class='col-12 text-center my-3'>
 <label >$question
         <input  type='text' class='form-control w-100' name='$question/$id'>
     </label>
@@ -39,7 +39,7 @@ function displayNum($question, $id)
 {
     echo "
 
-            <div class='my-3 col text-center'>
+            <div class='my-3 col-12 text-center'>
             <label>$question
         <input type='number' class='form-control w-100' name='$question/$id'>
             </label></div>";
@@ -48,7 +48,7 @@ function displayNum($question, $id)
 function displayMulti($question, $answers, $id)
 {
     echo "
-<div class='my-5 col-8 offset-2 text-center'>
+<div class='my-5 col-12 offset-md-2 col-md-8 text-center'>
 
 <label for='$question'>$question</label>
 <select class='form-control' name='$question/$id' id='$question'> ";

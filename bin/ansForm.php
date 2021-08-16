@@ -15,9 +15,7 @@ foreach ($_POST as $key => $value) {
     $answerObj = ["id_question" => $a[1],
         "id_poll" => $pollId,
         "answer" => $value];
-
     $ansCrud->insert($answerObj);
 }
-
 $msg = "Gracias por contestar la encuesta $form_id";
 header("Location: /index.php?msg=$msg");

@@ -48,9 +48,20 @@ if ($err) {
                     ?>
                 </div>
             </div>
+            <div class="row my-5">
+                <div class="col-12 w-100 text-center">
+                    <?php
+                    $crud = new Crud("form");
+                    $headers = ["#", "Nombre", "Categoria"];
+                    $data = $crud->get();
+                    $extraCols = [];
+                    $config = ["extra_cols" => $extraCols, "tr" => 'md', "tc" => "thead-dark"];
+                    echo buildTableStdAsString($headers, $data, $config);
+                    ?>
+                </div>
+            </div>
         </div>
     </main>
-
 <?php
 require('../../partials/footer.php');
 require('../../partials/bootstrapScripts.php');
