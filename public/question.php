@@ -39,7 +39,7 @@ require('../partials/header.php');
                 }
                 $count = 1;
                 foreach ($answers as $answer) {
-                    $sql = "SELECT COUNT(*) as val FROM answer WHERE answer='$answer'";
+                    $sql = "SELECT COUNT(*) as val FROM answer WHERE answer='$answer' and id_question = $id";
                     $ans = $connection->prepare($sql);
                     $ans->execute();
                     $ans_data = $ans->fetchAll(PDO::FETCH_ASSOC);
