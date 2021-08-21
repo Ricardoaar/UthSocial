@@ -17,6 +17,16 @@ require('../partials/header.php');
 
                 $con = new Connection();
                 $connection = $con->connect();
+
+
+                $sql = "SELECT question FROM question where id = $id";
+                $title = $connection->prepare($sql);
+                $title->execute();
+                $title_data = $title->fetchAll(PDO::FETCH_ASSOC);
+                $title = $title_data[0];
+
+                echo "<h2 class='text-center my-5'>" . ($title['question']) . "</h2>";
+
                 $sql = "SELECT answer FROM answer_storage where id_question=$id";
                 $ans = $connection->prepare($sql);
                 $ans->execute();
@@ -38,16 +48,8 @@ require('../partials/header.php');
                     echo "<th scope='col'>$answer</th>";
                     echo "<th scope='col'>$value</th>";
                     echo "</tr>";
-//
                     $count++;
                 }
-
-
-                //                foreach ($answers as $qid => $question) {
-                //                    echo "<th scope='col'>$question</th>";
-                //                    echo "<th scope='col'><a href='question.php?id=$qid'><img height='20px' src='../assets/editar.png' alt=''></a></th>";
-                //
-                //                }
                 echo "</tbody></table>";
 
                 ?>
